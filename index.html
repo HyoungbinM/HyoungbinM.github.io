@@ -377,22 +377,32 @@
 </div>
 
 <script>
-  // Highlight the sidebar link for the section currently in view.
+  // Highlight the sidebar link for the section currently in view:
+  // the last section whose top has passed the upper third of the viewport.
   (function () {
     var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
     var map = {};
     links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
-    if (!('IntersectionObserver' in window)) return;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          links.forEach(function (a) { a.classList.remove('active'); });
-          var a = map[e.target.id];
-          if (a) a.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
-    document.querySelectorAll('main section[id]').forEach(function (s) { io.observe(s); });
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var line = window.innerHeight * 0.33;
+      var current = sections[0];
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].getBoundingClientRect().top <= line) current = sections[i];
+      }
+      links.forEach(function (a) { a.classList.remove('active'); });
+      var a = map[current.id];
+      if (a) a.classList.add('active');
+    }
+    function onScroll() {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
   })();
 </script>
 
