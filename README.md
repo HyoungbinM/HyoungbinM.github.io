@@ -1,4 +1,4 @@
-# hyoungbinm-creator.github.io
+# hyoungbinm.github.io
 
 Personal academic homepage of Hyoungbin Moon, served with GitHub Pages.
 
