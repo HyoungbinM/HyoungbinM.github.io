@@ -172,6 +172,12 @@
           <span class="me">Moon, H.</span>, &amp; Kim, Y. H. (2024, November).
           Sexless marriage in South Korea and the United States: A comparative analysis of the demographic and psychological variables.
           <span class="pill">Poster</span> Korean Social and Personality Psychological Association, Seoul, Korea.
+          <a class="poster-link" href="posters/2024-11_sexless-marriage.pdf" target="_blank" rel="noopener"
+             data-poster="posters/2024-11_sexless-marriage.jpg"
+             data-title="Sexless marriage in South Korea and the United States (KSPPA, Nov 2024)">
+            <img src="posters/2024-11_sexless-marriage_thumb.jpg" alt="" loading="lazy">
+            <span>View poster</span>
+          </a>
         </li>
         <li>
           Ok, S.*, <span class="me">Moon, H.*</span>, Oh, C., &amp; Kim, Y. H. (2024, November).
@@ -376,7 +382,44 @@
   </main>
 </div>
 
+<!-- Poster lightbox (opened by .poster-link; without JS the link simply opens the PDF) -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Poster preview">
+  <div class="lightbox-bar">
+    <span class="lightbox-title"></span>
+    <a class="lightbox-pdf" href="#" target="_blank" rel="noopener">Open PDF</a>
+    <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+  </div>
+  <div class="lightbox-body"><img alt="Poster"></div>
+</div>
+
 <script>
+  // Poster lightbox
+  (function () {
+    var box = document.getElementById('lightbox');
+    if (!box) return;
+    var img = box.querySelector('img');
+    var title = box.querySelector('.lightbox-title');
+    var pdf = box.querySelector('.lightbox-pdf');
+    function open(link) {
+      img.src = link.getAttribute('data-poster');
+      title.textContent = link.getAttribute('data-title') || 'Poster';
+      pdf.href = link.getAttribute('href');
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      box.hidden = true;
+      img.src = '';
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.poster-link[data-poster]').forEach(function (a) {
+      a.addEventListener('click', function (e) { e.preventDefault(); open(a); });
+    });
+    box.querySelector('.lightbox-close').addEventListener('click', close);
+    box.addEventListener('click', function (e) { if (e.target === box || e.target.classList.contains('lightbox-body')) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !box.hidden) close(); });
+  })();
+
   // Highlight the sidebar link for the section currently in view:
   // the last section whose top has passed the upper third of the viewport.
   (function () {
