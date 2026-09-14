@@ -38,6 +38,7 @@
 
 <main class="page">
 
+  <div class="view" id="view-about" data-section="about">
   <!-- ============ HERO / ABOUT ============ -->
   <section id="about" class="hero">
     <aside class="hero-side">
@@ -102,7 +103,6 @@
       </div>
     </div>
   </section>
-
   <!-- ============ EDUCATION ============ -->
   <section id="education" class="block">
     <h2 class="label">Education</h2>
@@ -127,7 +127,21 @@
       </ul>
     </div>
   </section>
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="block">
+    <h2 class="label">Skills</h2>
+    <div class="body">
+      <dl class="skills">
+        <dt>Statistical software</dt>
+        <dd>R, SPSS, Mplus, SAS</dd>
+        <dt>Quantitative methods</dt>
+        <dd>Dyadic data analysis (APIM, DRSA), multilevel and longitudinal modeling, factor analysis (EFA, CFA), measurement invariance testing</dd>
+      </dl>
+    </div>
+  </section>
+  </div>
 
+  <div class="view" id="view-publications" data-section="publications">
   <!-- ============ PUBLICATIONS ============ -->
   <section id="publications" class="block">
     <h2 class="label">Publications</h2>
@@ -139,9 +153,27 @@
           <span class="me">Moon, H.</span>, &amp; Kim, Y. H. (2026). Prevalence and correlates of sexual inactivity among married couples.
           <em>The Journal of Sexual Medicine, 23</em>(7), Article qdag180.
           <a class="doi" href="https://doi.org/10.1093/jsxmed/qdag180" target="_blank" rel="noopener">doi:10.1093/jsxmed/qdag180</a>
-          <details class="abstract">
-            <summary>Summary</summary>
-            <p>Sexual inactivity among married couples is rising worldwide, yet cross-national comparisons have been rare. Drawing on four surveys of more than 5,000 married adults in South Korea and the United States, this paper shows that sexual inactivity is roughly twice as common in Korea at every age. Older age and a weaker promotion focus predicted inactivity in both countries, whereas less couple communication time, lower household income, and emotion suppression mattered mainly in Korea. The findings point to both universal and culturally specific pathways to sexual disengagement in marriage.</p>
+          <details class="abstract rs">
+            <summary>Summary &amp; figures</summary>
+            <div class="rs-body">
+              <p><strong>Question.</strong> Marital sexual inactivity is rising worldwide, but cross-national comparisons using a consistent definition have been rare. Do its prevalence and correlates differ between South Korea and the United States?</p>
+              <p><strong>Data and approach.</strong> Four independent online surveys (2021–2022) of 3,136 Korean and 2,134 U.S. married adults. Sexual inactivity was defined as no intercourse in an average month. Binary logistic regressions were estimated within each country, and country-by-correlate interactions tested whether associations differed across countries.</p>
+              <p><strong>Findings.</strong> Sexual inactivity rose with age in both countries and was higher in Korea at every age, about 1.5 to 3 times the U.S. rate. Older age and a weaker promotion focus were associated with inactivity similarly in both countries. Longer communication time and higher family income were associated with less inactivity in both, but communication time mattered more in Korea and income more in the United States. Three associations appeared only in Korea: women, postgraduate degree holders, and people higher in emotion suppression reported more inactivity.</p>
+              <div class="figs">
+                <figure>
+                  <img src="figures/jsm-prevalence-by-age.png" alt="Bar chart of sexual inactivity by age group in South Korea and the United States" loading="lazy">
+                  <figcaption>Prevalence of sexual inactivity by age group. Korea is higher at every age.</figcaption>
+                </figure>
+                <figure>
+                  <img src="figures/jsm-demographic-correlates.png" alt="Predicted probability of sexual inactivity by age, gender, education, and family income in both countries" loading="lazy">
+                  <figcaption>Predicted probability of sexual inactivity by age (A), gender (B), education (C), and family income (D).</figcaption>
+                </figure>
+                <figure>
+                  <img src="figures/jsm-psychological-correlates.png" alt="Predicted probability of sexual inactivity by communication time, promotion focus, prevention focus, and emotion suppression in both countries" loading="lazy">
+                  <figcaption>Predicted probability of sexual inactivity by communication time (A), promotion focus (B), prevention focus (C), and emotion suppression (D).</figcaption>
+                </figure>
+              </div>
+            </div>
           </details>
         </li>
       </ol>
@@ -152,9 +184,23 @@
           <span class="me">Moon, H.</span>, Cheon, J. E., Kim, D., Chae, M., Seo, M., Cohen, D., &amp; Kim, Y. H. (under review).
           Compatibility is not about matching: The benefits of strong saving orientations in both partners.
           <em>Psychological Science</em>.
-          <details class="abstract">
-            <summary>Summary</summary>
-            <p>About one in three couples report fighting over money, but do partners need matching financial habits? Following Korean couples from six months before marriage to one year after, this study used dyadic response surface analysis to compare similarity, complementarity, and additive accounts of partners’ saving orientations. Satisfaction after marriage was highest when both partners were strong savers, a pattern that held after accounting for conscientiousness, income, and cohabitation. Financial compatibility appears to depend on the couple’s combined prudence rather than on how well partners match.</p>
+          <details class="abstract rs">
+            <summary>Summary &amp; figures</summary>
+            <div class="rs-body">
+              <p><strong>Question.</strong> Do partners need matching financial habits? Competing accounts predict that similarity, complementarity, or simply the combined level of both partners’ saving orientations would be associated with higher relationship satisfaction.</p>
+              <p><strong>Data and approach.</strong> 272 Korean premarital couples assessed six months before marriage and one year after. Dyadic response surface analysis modeled the combined associations of actor and partner saving orientations with relationship satisfaction, controlling for conscientiousness, financial stability, relationship duration, and premarital cohabitation. The postmarital analysis also controlled for premarital satisfaction.</p>
+              <p><strong>Findings.</strong> Before marriage, only an actor effect emerged: one’s own saving orientation related to one’s own satisfaction, with no dyadic pattern. After marriage, satisfaction was highest when both partners were strong savers. The surface rose along the line of congruence, with no curvature or incongruence effects, which points to additive contributions from both partners rather than similarity or complementarity. The pattern held after adjusting for the covariates and did not differ by gender.</p>
+              <div class="figs two">
+                <figure>
+                  <img src="figures/saving-premarital.png" alt="Response surface of premarital relationship satisfaction as a function of actor and partner saving orientation" loading="lazy">
+                  <figcaption>Before marriage: relationship satisfaction as a function of actor and partner saving orientation.</figcaption>
+                </figure>
+                <figure>
+                  <img src="figures/saving-postmarital.png" alt="Response surface of postmarital relationship satisfaction as a function of actor and partner saving orientation" loading="lazy">
+                  <figcaption>One year after marriage: satisfaction peaks when both partners are strong savers.</figcaption>
+                </figure>
+              </div>
+            </div>
           </details>
         </li>
         <li>
@@ -210,7 +256,9 @@
       </ol>
     </div>
   </section>
+  </div>
 
+  <div class="view" id="view-presentations" data-section="presentations">
   <!-- ============ PRESENTATIONS ============ -->
   <section id="presentations" class="block">
     <h2 class="label">Conference Presentations</h2>
@@ -250,37 +298,9 @@
       <p class="note">* equal contribution</p>
     </div>
   </section>
+  </div>
 
-  <!-- ============ AWARDS ============ -->
-  <section id="awards" class="block">
-    <h2 class="label">Honors &amp; Awards</h2>
-    <div class="body">
-      <ul class="entries compact">
-        <li>
-          <div class="entry-head">
-            <strong>Creative Humanities Seminar Grant</strong>
-            <span class="date">Spring 2026 – Present</span>
-          </div>
-          <div class="entry-sub">Yonsei University Center for Arts &amp; Humanities</div>
-        </li>
-        <li>
-          <div class="entry-head">
-            <strong>Award, Public Psychology Video Content Contest</strong>
-            <span class="date">Spring 2026</span>
-          </div>
-          <div class="entry-sub">Korean Psychological Association</div>
-        </li>
-        <li>
-          <div class="entry-head">
-            <strong>Excellence Award, Special Interest Group (SIG)</strong>
-            <span class="date">Spring 2026</span>
-          </div>
-          <div class="entry-sub">Yonsei University Center for Teaching &amp; Learning</div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
+  <div class="view" id="view-experience" data-section="experience">
   <!-- ============ RESEARCH EXPERIENCE ============ -->
   <section id="experience" class="block">
     <h2 class="label">Research Experience</h2>
@@ -321,7 +341,38 @@
       </ul>
     </div>
   </section>
+  <!-- ============ AWARDS ============ -->
+  <section id="awards" class="block">
+    <h2 class="label">Honors &amp; Awards</h2>
+    <div class="body">
+      <ul class="entries compact">
+        <li>
+          <div class="entry-head">
+            <strong>Creative Humanities Seminar Grant</strong>
+            <span class="date">Spring 2026 – Present</span>
+          </div>
+          <div class="entry-sub">Yonsei University Center for Arts &amp; Humanities</div>
+        </li>
+        <li>
+          <div class="entry-head">
+            <strong>Award, Public Psychology Video Content Contest</strong>
+            <span class="date">Spring 2026</span>
+          </div>
+          <div class="entry-sub">Korean Psychological Association</div>
+        </li>
+        <li>
+          <div class="entry-head">
+            <strong>Excellence Award, Special Interest Group (SIG)</strong>
+            <span class="date">Spring 2026</span>
+          </div>
+          <div class="entry-sub">Yonsei University Center for Teaching &amp; Learning</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  </div>
 
+  <div class="view" id="view-teaching" data-section="teaching">
   <!-- ============ TEACHING ============ -->
   <section id="teaching" class="block">
     <h2 class="label">Teaching</h2>
@@ -358,7 +409,9 @@
       </ul>
     </div>
   </section>
+  </div>
 
+  <div class="view" id="view-activities" data-section="activities">
   <!-- ============ SCHOLARLY ACTIVITIES ============ -->
   <section id="activities" class="block">
     <h2 class="label">Scholarly Activities</h2>
@@ -429,20 +482,9 @@
       </ul>
     </div>
   </section>
+  </div>
 
-  <!-- ============ SKILLS ============ -->
-  <section id="skills" class="block">
-    <h2 class="label">Skills</h2>
-    <div class="body">
-      <dl class="skills">
-        <dt>Statistical software</dt>
-        <dd>R, SPSS, Mplus, SAS</dd>
-        <dt>Quantitative methods</dt>
-        <dd>Dyadic data analysis (APIM, DRSA), multilevel and longitudinal modeling, factor analysis (EFA, CFA), measurement invariance testing</dd>
-      </dl>
-    </div>
-  </section>
-
+  <div class="view" id="view-contact" data-section="contact">
   <!-- ============ CONTACT ============ -->
   <section id="contact" class="block">
     <h2 class="label">Contact</h2>
@@ -459,6 +501,7 @@
       </dl>
     </div>
   </section>
+  </div>
 
   <footer class="foot">
     <p>Last updated September 2026 · <a href="https://github.com/HyoungbinM/HyoungbinM.github.io" target="_blank" rel="noopener">Site source</a></p>
@@ -467,33 +510,22 @@
 </main>
 
 <script>
-  // Highlight the top-nav link for the section currently in view:
-  // the last section whose top has passed the upper third of the viewport.
+  // One section at a time: the nav switches views, and the URL hash deep-links to them.
   (function () {
+    document.documentElement.classList.add('js');
+    var views = Array.prototype.slice.call(document.querySelectorAll('.view'));
     var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
-    var map = {};
-    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
-    var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'))
-      .filter(function (s) { return map[s.id]; });
-    var ticking = false;
-
-    function update() {
-      ticking = false;
-      var line = window.innerHeight * 0.33;
-      var current = sections[0];
-      for (var i = 0; i < sections.length; i++) {
-        if (sections[i].getBoundingClientRect().top <= line) current = sections[i];
-      }
-      links.forEach(function (a) { a.classList.remove('active'); });
-      var a = map[current.id];
-      if (a) a.classList.add('active');
+    function show(hash) {
+      var id = (hash || '#about').replace('#', '');
+      var target = document.getElementById(id);
+      var view = (target && target.closest('.view')) || views[0];
+      views.forEach(function (v) { v.classList.toggle('active', v === view); });
+      links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + view.getAttribute('data-section')); });
+      if (target && target !== view && target.classList.contains('block')) { target.scrollIntoView(); }
+      else { window.scrollTo(0, 0); }
     }
-    function onScroll() {
-      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    update();
+    window.addEventListener('hashchange', function () { show(location.hash); });
+    show(location.hash);
   })();
 </script>
 

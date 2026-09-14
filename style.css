@@ -321,7 +321,7 @@ h3 .note { text-transform: none; letter-spacing: 0; font-weight: 400; margin-lef
 }
 .abstract[open] summary::before { content: "–"; }
 .abstract summary:hover { text-decoration: underline; text-underline-offset: 3px; }
-.abstract p {
+.abstract > p, .rs-body {
   margin: 8px 0 4px;
   padding: 10px 16px;
   border-left: 2px solid var(--accent);
@@ -331,6 +331,28 @@ h3 .note { text-transform: none; letter-spacing: 0; font-weight: 400; margin-lef
   font-size: 16px;
   line-height: 1.55;
 }
+.rs-body p { margin: 0 0 10px; }
+.rs-body p strong { font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--accent); }
+
+/* figures inside a research summary */
+
+.figs { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 12px 0 6px; }
+.figs.two { grid-template-columns: 1fr 1fr; }
+.figs figure {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+}
+.figs img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.figs figcaption { font-family: var(--sans); font-size: 12.5px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
+
+/* tab views: one section group at a time (all visible without JS) */
+
+html.js .view { display: none; }
+html.js .view.active { display: block; }
+.view .block:last-child { border-bottom: 0; }
 
 /* skills / contact */
 
@@ -374,6 +396,7 @@ h3 .note { text-transform: none; letter-spacing: 0; font-weight: 400; margin-lef
 
 @media (max-width: 560px) {
   body { font-size: 16.5px; }
+  .figs.two { grid-template-columns: 1fr; }
   .topbar-inner { padding: 12px 18px; }
   .nav { gap: 16px; }
   .lead { font-size: 18px; }
